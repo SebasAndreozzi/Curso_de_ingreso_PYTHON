@@ -45,6 +45,11 @@ class App(customtkinter.CTk):
         
         bfast = prompt(title_bfast, message_bfast)
 
+        if bfast != None:
+            alert(title_bfast, bfast)
+        else:
+            pass
+
 
 if __name__ == "__main__":
     app = App()
