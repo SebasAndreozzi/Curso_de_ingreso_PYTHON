@@ -37,9 +37,8 @@ class App(customtkinter.CTk):
         nom_message = "¿Cuál es tu nombre?"
         
         nom_answer = prompt(nom_title, nom_message)
-        length = len(self.txt_nombre.get())
 
-        self.txt_nombre.delete(0, length)
+        self.txt_nombre.delete(0, 5000)
         self.txt_nombre.insert(0, nom_answer)
     
 if __name__ == "__main__":
