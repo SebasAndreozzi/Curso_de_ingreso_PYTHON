@@ -26,12 +26,15 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        
+
         title = "Esto anda?"
         message = "Esto no anda, funciona"
 
-        alert(title, message)
+        title_bath = "Ya es la hora"
+        message_bath = "Te bañaste?"
 
+        #alert(title, message)
+        se_banio = question(title_bath, message_bath)
 
 if __name__ == "__main__":
     app = App()
