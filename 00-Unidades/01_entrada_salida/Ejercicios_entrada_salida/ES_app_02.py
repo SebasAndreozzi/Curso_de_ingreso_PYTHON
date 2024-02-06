@@ -31,11 +31,16 @@ class App(customtkinter.CTk):
         message_bfast = "¿Qué desayunaste hoy?"
 
         bfast = prompt(title_bfast, message_bfast)
-
+        '''
+        
         if bfast != None:
-            alert(title_bfast, bfast) 
+            alert(title_bfast, bfast)
+            
         else:
             pass
+                
+        '''
+        alert(title_bfast, bfast) 
         
     
 if __name__ == "__main__":
