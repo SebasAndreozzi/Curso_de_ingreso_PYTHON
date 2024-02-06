@@ -27,9 +27,9 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
 
-        title = "Esto anda?"
+        title = None
         message = "Esto no anda, funciona"
-        
+
         alert(title, message)
 
 
