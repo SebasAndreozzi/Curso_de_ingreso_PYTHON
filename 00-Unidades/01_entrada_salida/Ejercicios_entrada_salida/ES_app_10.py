@@ -42,8 +42,9 @@ class App(customtkinter.CTk):
         new_import = import_entry - op_percentage
 
         title = "Descuento"
+        message = "Se aplicó un descuento del {0}%.\nEl importe final es de ${1}".format(PERCENTAGE, new_import)
 
-        alert(title, new_import) 
+        alert(title, message) 
 
 
 if __name__ == "__main__":

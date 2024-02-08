@@ -47,8 +47,9 @@ class App(customtkinter.CTk):
         new_salary = salary + op_percentage
 
         title = "Cambio sueldo"
+        message = "Se aplicó un aumento del {0}%.\nEl nuevo salario es de ${1}".format(entry_percentage, new_salary) 
 
-        alert(title, new_salary) 
+        alert(title, message) 
         
     
 if __name__ == "__main__":
