@@ -6,7 +6,7 @@ import customtkinter
 
 '''
 nombre: Sebastián Javier
-apellido: Andfreozzi
+apellido: Andreozzi
 ---
 Ejercicio: entrada_salida_05
 ---
