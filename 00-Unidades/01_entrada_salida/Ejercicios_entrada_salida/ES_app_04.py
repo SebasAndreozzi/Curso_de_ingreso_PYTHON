@@ -35,10 +35,11 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         nom_title = "Nombre"
         nom_message = "¿Cuál es tu nombre?"
+        txt_nombre_length = len(self.txt_nombre.get())
         
         nom_answer = prompt(nom_title, nom_message)
 
-        self.txt_nombre.delete(0, 5000)
+        self.txt_nombre.delete(0, txt_nombre_length)
         self.txt_nombre.insert(0, nom_answer)
     
 if __name__ == "__main__":
