@@ -58,7 +58,7 @@ class App(customtkinter.CTk):
         res_addition = num_entry_a + num_entry_b
 
         title_addition = "Suma"
-        message_addition =  "El resultado de la suma es: " + str(res_addition) 
+        message_addition =  "El resultado de la suma es: {0}".format(res_addition) 
 
         alert(title_addition, message_addition)
 
@@ -69,7 +69,7 @@ class App(customtkinter.CTk):
         res_substraction = num_entry_a - num_entry_b
 
         title_addition = "Resta"
-        message_substraction =  "El resultado de la resta es: " + str(res_substraction) 
+        message_substraction =  "El resultado de la resta es: {0}".format(res_substraction) 
 
         alert(title_addition, message_substraction)
 
@@ -80,7 +80,7 @@ class App(customtkinter.CTk):
         res_multiplication = num_entry_a * num_entry_b
 
         title_multiplication = "Multiplicación"
-        message_multiplication =  "El resultado de la multiplicación es: " + str(res_multiplication) 
+        message_multiplication =  "El resultado de la multiplicación es: {0}".format(res_multiplication) 
 
         alert(title_multiplication, message_multiplication)
 
@@ -91,7 +91,7 @@ class App(customtkinter.CTk):
         res_division = num_entry_a / num_entry_b
 
         title_division = "División"
-        message_division =  "El resultado de la división es: " + str(res_division) 
+        message_division =  "El resultado de la división es: {0}".format(res_division) 
 
         alert(title_division, message_division)
 
