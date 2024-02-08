@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián Javier
+apellido: Andreozzi
 ---
 TP: ES_Facturaciones
 ---
@@ -52,13 +52,45 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        product_entry_1 = float(self.txt_importe_1.get())
+        product_entry_2 = float(self.txt_importe_2.get())
+        product_entry_3 = float(self.txt_importe_3.get())
+
+        total_price = product_entry_1 + product_entry_2 + product_entry_3
+
+        title = "Precio total"
+
+        alert(title, total_price)
+
 
     def btn_promedio_on_click(self):
-        pass
+        product_entry_1 = float(self.txt_importe_1.get())
+        product_entry_2 = float(self.txt_importe_2.get())
+        product_entry_3 = float(self.txt_importe_3.get())
+
+        total_price = product_entry_1 + product_entry_2 + product_entry_3
+
+        average_price = total_price / 3
+
+        title = "Precio promedio"
+
+        alert(title, average_price)
 
     def btn_total_iva_on_click(self):
-        pass      
+        PERCENTAGE_IVA = 21
+        product_entry_1 = float(self.txt_importe_1.get())
+        product_entry_2 = float(self.txt_importe_2.get())
+        product_entry_3 = float(self.txt_importe_3.get())
+
+        total_price = product_entry_1 + product_entry_2 + product_entry_3
+
+        op_percentage = (total_price * PERCENTAGE_IVA) / 100
+
+        final_price = total_price + op_percentage
+
+        title = "Precio final más IVA"
+
+        alert(title, final_price) 
     
 if __name__ == "__main__":
     app = App()
