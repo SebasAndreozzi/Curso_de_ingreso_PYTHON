@@ -59,8 +59,9 @@ class App(customtkinter.CTk):
         total_price = product_entry_1 + product_entry_2 + product_entry_3
 
         title = "Precio total"
+        message = "El precio total es ${0}".format(total_price)
 
-        alert(title, total_price)
+        alert(title, message)
 
 
     def btn_promedio_on_click(self):
@@ -73,8 +74,9 @@ class App(customtkinter.CTk):
         average_price = total_price / 3
 
         title = "Precio promedio"
+        message = "El precio promedio es ${0}".format(average_price)
 
-        alert(title, average_price)
+        alert(title, message)
 
     def btn_total_iva_on_click(self):
         PERCENTAGE_IVA = 21
@@ -89,8 +91,9 @@ class App(customtkinter.CTk):
         final_price = total_price + op_percentage
 
         title = "Precio final más IVA"
+        message = "El precio final más IVA es ${0}".format(final_price)
 
-        alert(title, final_price) 
+        alert(title, message) 
     
 if __name__ == "__main__":
     app = App()
