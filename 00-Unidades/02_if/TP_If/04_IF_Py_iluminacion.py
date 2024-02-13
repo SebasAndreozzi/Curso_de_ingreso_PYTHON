@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián Javier
+apellido: Andreozzi
 ---
 TP: IF_Iluminacion
 ---
@@ -43,7 +43,55 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        LIGHTBULB_PRICE = 800
+        FINAL_PRICE_DISCOUNT_MIN = 4000
+        FINAL_PRICE_DISCOUNT_PERCENTAGE = 5
+
+        lightbulb_quantity = int(self.combobox_cantidad.get())
+        lightbulb_brand = str(self.combobox_marca.get())
+
+        total_price = LIGHTBULB_PRICE * lightbulb_quantity
+        discount_percentage = 0
+
+        if lightbulb_quantity >= 6:
+            discount_percentage = 50
+        
+        elif lightbulb_quantity == 5:
+            if lightbulb_brand == "ArgentinaLuz":
+                discount_percentage = 40
+            else:
+                discount_percentage = 30
+        
+        elif lightbulb_quantity == 4:
+            if lightbulb_brand == "ArgentinaLuz" or lightbulb_brand == "FelipeLamparas":
+                discount_percentage = 25
+            else:
+                discount_percentage = 20
+        
+        elif lightbulb_quantity == 3:
+            if lightbulb_brand == "ArgentinaLuz":
+                discount_percentage = 15
+            
+            elif lightbulb_brand == "FelipeLamparas":
+                discount_percentage = 10
+            
+            else:
+                discount_percentage = 5
+        else:
+            pass
+
+        discount = (total_price * discount_percentage) / 100
+        final_price = total_price - discount
+
+        if final_price >= FINAL_PRICE_DISCOUNT_MIN:
+            final_price = (final_price - ((final_price * FINAL_PRICE_DISCOUNT_PERCENTAGE) / 100))
+        
+        title = "Precio final"
+        message = f"El final a pagar es de ${round(final_price, 2)}."
+
+        alert(title, message)
+        
+
         
     
 if __name__ == "__main__":
