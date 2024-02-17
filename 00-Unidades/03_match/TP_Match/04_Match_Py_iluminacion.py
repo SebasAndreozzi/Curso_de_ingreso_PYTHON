@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián Javier
+apellido: Andreozzi
 ---
 TP: Iluminación
 ---
@@ -43,7 +43,52 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        LIGHTBULB_PRICE = 800
+        FINAL_PRICE_DISCOUNT_MIN = 4000
+        FINAL_PRICE_DISCOUNT_PERCENTAGE = 5
+
+        lightbulb_quantity = int(self.combobox_cantidad.get())
+        lightbulb_brand = str(self.combobox_marca.get())
+
+        total_price = LIGHTBULB_PRICE * lightbulb_quantity
+        discount_percentage = 0
+
+        match lightbulb_quantity:
+            case 1 | 2:
+                pass
+            case 3:
+                match lightbulb_brand:
+                    case "ArgentinaLuz":
+                        discount_percentage = 15    
+                    case"FelipeLamparas":
+                        discount_percentage = 10
+                    case _:
+                        discount_percentage = 5
+            case 4:
+                match lightbulb_brand:
+                    case "ArgentinaLuz" | "FelipeLamparas":
+                        discount_percentage = 25
+                    case _:
+                        discount_percentage = 20
+            case 5:
+                match lightbulb_brand:
+                    case "ArgentinaLuz":
+                        discount_percentage = 40
+                    case _:
+                        discount_percentage = 30
+            case _:
+                    discount_percentage = 50
+
+        discount = (total_price * discount_percentage) / 100
+        final_price = total_price - discount
+
+        if final_price >= FINAL_PRICE_DISCOUNT_MIN:
+            final_price = (final_price - ((final_price * FINAL_PRICE_DISCOUNT_PERCENTAGE) / 100))
+        
+        title = "Precio final"
+        message = f"El final a pagar es de ${round(final_price, 2)}."
+
+        alert(title, message)
         
     
 if __name__ == "__main__":
