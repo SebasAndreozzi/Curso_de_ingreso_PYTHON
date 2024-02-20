@@ -41,6 +41,7 @@ class App(customtkinter.CTk):
 
         while usr_entry != VALID_LETTER_1 and usr_entry != VALID_LETTER_2 and usr_entry != VALID_LETTER_3:
             usr_entry = prompt(title, "Letra")
+            usr_entry = usr_entry.upper()
 
         alert(title, message)
             
