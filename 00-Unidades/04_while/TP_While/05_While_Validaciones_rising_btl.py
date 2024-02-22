@@ -110,22 +110,6 @@ class App(customtkinter.CTk):
                 self.combobox_tipo.set(DIVORSED_TEXT)
             case _:
                 self.combobox_tipo.set(WIDOW_TEXT)
-                    
-        '''
-
-        match marital_state_entry:
-            case "S":
-                self.combobox_tipo.set(SINGLE_TEXT)
-            case "C":
-                self.combobox_tipo.set(MARRIED_TEXT)
-            case "D":
-                self.combobox_tipo.set(DIVORSED_TEXT)
-            case "V":
-                self.combobox_tipo.set(WIDOW_TEXT)
-            case _:
-                marital_state_entry = prompt(title_prompt, message_marital_state)
-
-        '''
 
         #FILE NUMBER
         message_file_num = "Nro de legajo: "
