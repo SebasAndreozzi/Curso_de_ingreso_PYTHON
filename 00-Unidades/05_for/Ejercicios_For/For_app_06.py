@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián Javeir
+apellido: Andreozzi
 ---
 Ejercicio: for_06
 ---
@@ -27,7 +27,23 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        title = "Número"
+        
+        number_entry = int(prompt(title, "Número: "))
+
+        multiple_counter = 0
+
+        for number in range(1, number_entry + 1):
+            
+            if number_entry % number == 0:
+
+                alert(title, number)
+
+                multiple_counter +=1
+        
+        message_multiple_counter = f"{number_entry} es divisible por {multiple_counter} números"
+        
+        alert(title, message_multiple_counter)
         
     
 if __name__ == "__main__":

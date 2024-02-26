@@ -1,3 +1,4 @@
+import random
 import tkinter
 from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
@@ -5,8 +6,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián Javier
+apellido: Andreozzi
 ---
 Ejercicio: for_09
 ---
@@ -37,7 +38,47 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        MAX_INTENTOS = 7
+
+        title = "Adivinadivinador"
+        message = None
+
+        winning_number = random.randint(1, 101)
+        print(winning_number)
+
+        for i in range (1, MAX_INTENTOS+1):
+            if i < 7:
+                usr_entry = int(prompt(title, "Número: "))
+
+                if usr_entry < winning_number:
+                    message = "Falta…"
+                
+                else:
+                    if usr_entry > winning_number:
+                        message = "Se pasó…"
+                    
+                    else:
+                        match i:
+                            case 1:
+                                message = "Usted es un psíquico 0o0"
+                            case 2:
+                                message = "Excelente percepción ._."
+                            case 3:
+                                message = "Esto es suerte ;)"
+                            case 7:
+                                message = "Perdiste, suerte para la próxima :/"
+                            case _:
+                                message = "Excelente técnica B)"
+
+            else:
+                message = "Perdiste, suerte para la próxima :/"
+
+            alert(title, message)
+            
+            if usr_entry == winning_number:
+                break
+
+            
                 
 
     
